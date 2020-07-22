@@ -1,13 +1,137 @@
 @import "~normalize.css";
-
 @import "_variables";
 @import "modules/hello.scss";
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
 
 body {
-  background: $wtf;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    margin-top: 10px;
+    background: linear-gradient( 45deg, rgba(2, 0, 36, 1) 0%, rgba(43, 103, 163, 0.9486169467787114) 42%, rgba(0, 212, 255, 1) 100%);
+    background-size: cover;
+}
+
+.main {
+    max-width: 1000px;
+    margin: 30px auto 0;
+}
+
+.image {
+    display: block;
+    width: 100%;
+}
+
+section {
+    background: lightcyan;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+    &__header {
+        color: navy;
+    }
+}
+
+h1 {
+    color: rgb(22, 49, 172);
+}
+
+p {
+    color: #211ec7;
+}
+
+h2 {
+    color: #0f1cd8;
+}
+
+h3 {
+    color: #090f68;
+}
+
+#top {
+    background: rgb(91, 185, 243);
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+a {
+    color: #70590d;
+}
+
+.header {
+    background: rgb(88, 178, 235);
+    padding: 16px;
+    border-radius: 8px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navigation {
+    display: none;
+    &__link {
+        color: navy;
+        display: block;
+        margin: 0 0 16px;
+    }
+    &--open {
+        display: block;
+    }
+}
+
+.footer {
+    background: rgb(88, 178, 235);
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: flex;
+    &__content {
+        width: 660px;
+        margin: 0 auto;
+    }
+}
+
+.hamburger {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: none;
+    background: none;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template: 50% 50% / 3fr 1fr;
+        &__element--header {
+            grid-row: 1 / span 2;
+            margin-right: 5px;
+        }
+    }
+    .hamburger {
+        display: none;
+    }
+    .header {
+        background: rgb(88, 178, 235);
+        padding: 16px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+    }
+    .navigation {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main {
+        max-width: 1000px;
+        margin: 70px auto 0;
+    }
 }
